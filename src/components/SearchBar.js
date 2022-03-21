@@ -35,7 +35,7 @@ export default function SearchBar({ placeholder, data, filter }) {
           <SearchIcon />
       </div>
     </div>
-    {filteredData.length != 0 && (
+    {filteredData.length !== 0 && (
       <div className="dataResult">
         {filteredData.map((value, key) => {
           return (

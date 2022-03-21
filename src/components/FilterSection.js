@@ -57,7 +57,6 @@ export default function FilterSection() {
                     </Grid>
                     <Grid container spacing={2}>
                     <Grid item xs={12} align="center">
-                        
                         <Button type="submit" variant="contained" color="primary"><FilterListIcon />Filter</Button>
                     </Grid>
 
