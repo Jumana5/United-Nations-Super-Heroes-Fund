@@ -20,18 +20,18 @@ let initialState = {
 export const herosReducer = (state = initialState, action) =>{
     let {type, payload} = action
     switch(type){
-        case HEROS_GET_REQUEST:
+        case HEROS_GET_REQUEST || HEROS_SORT_REQUEST:
             return{
                 ...state,
                 loading:true
             }
-            case HEROS_GET_SUCCESS:
+            case HEROS_GET_SUCCESS || HEROS_SORT_SUCCESS:
                 return{
                     ...state,
                     loading:false,
                     data:payload
                 }
-                case HEROS_GET_FAILURE:
+                case HEROS_GET_FAILURE || HEROS_SORT_FAILURE:
                     return{
                         ...state,
                         errorMesage:payload

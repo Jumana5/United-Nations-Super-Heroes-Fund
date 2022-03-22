@@ -22,7 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HerosPage />}/>
         <Route path="/search" element={<SearchResult />}/>
-        <Route path="/search/:name" element={<SearchResult />}/>
+        <Route path="/search?q=react" element={<SearchResult />}/>
         <Route path="/search/:name/:email/:phone/:company/:country/:date" element={<SearchResult />}/>
         <Route path="*" element={<NotFoundPage />}/>
       </Routes>

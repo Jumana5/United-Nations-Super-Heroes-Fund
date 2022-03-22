@@ -24,3 +24,16 @@ return async (dispatch) =>{
    }
 }
 }
+
+export const sortHeros =() =>{
+    return async (dispatch) =>{
+       try{
+           dispatch({type: HEROS_SORT_REQUEST})
+            //TODO: sort the list.
+           dispatch({type:HEROS_SORT_SUCCESS, payload:data})
+       }
+       catch(error){
+           dispatch({type:HEROS_SORT_FAILURE, payload:error})
+       }
+    }
+    }

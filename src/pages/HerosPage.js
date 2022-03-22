@@ -6,7 +6,7 @@ import HerosTable from '../components/HerosTable';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import { useDispatch } from 'react-redux';
-import { getHeros } from '../redux/heros/herosActions';
+import { getHeros, sortHeros } from '../redux/heros/herosActions';
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -21,6 +21,7 @@ export default function HerosPage() {
 
   useEffect(()=>{
     dispatch(getHeros());
+    dispatch(sortHeros());
   }, [])
   return (
     <div  className={classes.container} >
