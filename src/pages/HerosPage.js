@@ -1,25 +1,33 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Row  from 'react-bootstrap/Row';
 import heros from "../data.json";
-import { useState, useEffect } from 'react';
 import SearchBar from '../components/SearchBar';
 import FilterSection from '../components/FilterSection';
 import HerosTable from '../components/HerosTable';
+import Grid from '@material-ui/core/Grid';
+import { makeStyles } from '@material-ui/core/styles';
+const useStyles = makeStyles((theme) => ({
+    container: {
+      padding: "1rem",
+      backgroundColor: "grey"
+    },
+  }));
+
 export default function HerosPage() {
+  const classes = useStyles();
 
   return (
-    <div className="">
-    
-        <Container className=''>
-        <Row>
-            <SearchBar data={heros} />
-         </Row>
-        <Row className = ''>
-            <div className="col-4"><FilterSection /></div>
-            <div className="col-8"><HerosTable data={heros}/> </div>
-        </Row>
-        </Container>
+    <div  className={classes.container} >
+    <SearchBar data={heros} />
+    <Grid container margin spacing={4}>
+        <Grid item xs={4}>
+            <FilterSection />
+        </Grid>
+
+        <Grid item xs={8}>
+            <HerosTable data={heros}/>
+        </Grid>
+    </Grid>
+
     </div>
   );
 }

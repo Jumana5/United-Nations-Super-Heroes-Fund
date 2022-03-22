@@ -1,4 +1,4 @@
-import './App.scss';
+import './App.css';
 import HerosPage from './pages/HerosPage';
 function App() {
 
