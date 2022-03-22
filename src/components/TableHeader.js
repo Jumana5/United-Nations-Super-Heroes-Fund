@@ -8,6 +8,8 @@ import Typography from '@mui/material/Typography';
 import SearchIcon from '@mui/icons-material/Search';
 import Tooltip from '@mui/material/Tooltip';
 import { useState} from 'react';
+import SearchBar from './SearchBar';
+import heros from "../data.json";
 
 export default function TableHeader() {
 
@@ -34,11 +36,10 @@ export default function TableHeader() {
             Heros
       </Typography>
        <Tooltip title="Search list">
-          <IconButton>
-            <SearchIcon onClick={handleSearch}/>
-          </IconButton>
+            <SearchBar data={heros}/>
         </Tooltip>
-        <Tooltip title="Filter list">
+
+        <Tooltip title="Sort list">
           <IconButton>
             <SortByAlphaIcon onClick={handleSort}/>
           </IconButton>

@@ -1,26 +1,31 @@
 export const formElements =[
-    {
-    title: 'Email',
+  {
+    title: 'Name',
+    name: "name",
     type: 'text',
     fullWidth:true
+  },
+    {
+    title: 'Email',
+    name: "email",
+    type: 'text',
+    fullWidth:true,
   },
 	{
     title: 'Phone',
-    type: 'text',
-    fullWidth:true
-  },
-	{
-    title: 'Name',
+    name: "phone",
     type: 'text',
     fullWidth:true
   },
 	{
     title: 'Company',
+    name: "company",
     type: 'text',
     fullWidth:true
   },
  {
-    title: 'country',
+    title: 'Country',
+    name: "country",
     type: 'dropdown',
     api: 'http://countryapi.gear.host/v1/Country/getCountries?pLimit=25&pPage=1',
     multiple: false,
@@ -28,6 +33,7 @@ export const formElements =[
   }, 
 	{
     title: 'Date',
+    name: "date",
     type: 'date',
     fullWidth:true
   }];

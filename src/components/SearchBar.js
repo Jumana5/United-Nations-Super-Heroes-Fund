@@ -1,12 +1,15 @@
 import { useState} from 'react';
 import React from 'react';
 import SearchIcon from '@mui/icons-material/Search';
+import { useNavigate, useParams } from 'react-router-dom';
 
-export default function SearchBar({ placeholder, data, filter }) {
+export default function SearchBar({ placeholder, data }) {
     const [filteredData, setFilteredData] = useState([]);
     const [wordEntered, setWordEntered] = useState("");
-  
-    const handleFilter = (event) => {
+    const { q } = useParams();
+    
+    
+    const handleSearch = (event) => {
       const searchWord = event.target.value;
       setWordEntered(searchWord);
       const newFilter = data.filter((value) => {
@@ -29,11 +32,9 @@ export default function SearchBar({ placeholder, data, filter }) {
         type="text"
         placeholder={placeholder}
         value={wordEntered}
-        onChange={handleFilter}
+        onChange={handleSearch}
       />
-      <div className="searchIcon">
-          <SearchIcon />
-      </div>
+      <SearchIcon />
     </div>
     {filteredData.length !== 0 && (
       <div className="dataResult">
