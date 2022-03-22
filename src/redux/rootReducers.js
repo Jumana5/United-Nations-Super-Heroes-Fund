@@ -1,4 +1,4 @@
-import { herosReducer, HERO_KEY } from "./redux/herosReducer";
+import { herosReducer, HERO_KEY } from "./heros/herosReducer";
 import { combineReducers } from "redux";
 
 

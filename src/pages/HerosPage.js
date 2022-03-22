@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import heros from "../data.json";
 import SearchBar from '../components/SearchBar';
 import FilterSection from '../components/FilterSection';
 import HerosTable from '../components/HerosTable';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-
+import { useDispatch } from 'react-redux';
+import { getHeros } from '../redux/heros/herosActions';
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -16,7 +17,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function HerosPage() {
   const classes = useStyles();
+  const dispatch = useDispatch();
 
+  useEffect(()=>{
+    dispatch(getHeros());
+  }, [])
   return (
     <div  className={classes.container} >
     <Grid container margin spacing={4}>
