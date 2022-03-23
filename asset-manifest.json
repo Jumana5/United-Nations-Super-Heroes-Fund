@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/United-Nations-Super-Heroes-Fund/static/css/main.76c30ff6.css",
-    "main.js": "/United-Nations-Super-Heroes-Fund/static/js/main.c8789d31.js",
-    "static/js/787.11f8437a.chunk.js": "/United-Nations-Super-Heroes-Fund/static/js/787.11f8437a.chunk.js",
-    "index.html": "/United-Nations-Super-Heroes-Fund/index.html",
-    "main.76c30ff6.css.map": "/United-Nations-Super-Heroes-Fund/static/css/main.76c30ff6.css.map",
-    "main.c8789d31.js.map": "/United-Nations-Super-Heroes-Fund/static/js/main.c8789d31.js.map",
-    "787.11f8437a.chunk.js.map": "/United-Nations-Super-Heroes-Fund/static/js/787.11f8437a.chunk.js.map"
+    "main.css": "/static/css/main.76c30ff6.css",
+    "main.js": "/static/js/main.c5618c4b.js",
+    "static/js/787.11f8437a.chunk.js": "/static/js/787.11f8437a.chunk.js",
+    "index.html": "/index.html",
+    "main.76c30ff6.css.map": "/static/css/main.76c30ff6.css.map",
+    "main.c5618c4b.js.map": "/static/js/main.c5618c4b.js.map",
+    "787.11f8437a.chunk.js.map": "/static/js/787.11f8437a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.76c30ff6.css",
-    "static/js/main.c8789d31.js"
+    "static/js/main.c5618c4b.js"
   ]
 }
