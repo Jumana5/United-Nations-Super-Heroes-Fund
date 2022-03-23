@@ -10,7 +10,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import TableHeader from './TableHeader';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { getHeros, sortHeros } from '../redux/heros/herosActions';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -46,12 +47,26 @@ return 0;
 }
 
 export default function HerosTable({herosData}) {
+  const dispatch = useDispatch();
   const colTitles = ["Name", "Phone", "Email", "Date", "Country", "Company"];
   const [sortedHeros, setSortedHeros ] = useState([]);
   const herosDetails = useSelector((state) => state.heros);
   const { loading, error, heros } = herosDetails;
   const  {isSorted}  = useSelector((state) => state.sortedHeros);
   
+
+  useEffect(()=>{
+    if (heros){
+      setSortedHeros(heros.slice().sort(compare_name));
+    } else {
+      console.log("have not recieved the list yet..");
+    }
+  }, []);
+
+  useEffect(()=>{
+      console.log(sortedHeros);
+  }, [sortedHeros]);
+
   useEffect(()=>{
     console.log(isSorted);
   }, [isSorted]);
@@ -59,6 +74,7 @@ export default function HerosTable({herosData}) {
   useEffect(()=>{
     console.log(heros);
     console.log("something happened changed the heros value..");
+    dispatch(getHeros());
   }, [heros]);
 
   return (
@@ -73,6 +89,31 @@ export default function HerosTable({herosData}) {
           </TableRow>
         </TableHead>
         <TableBody>
+          {isSorted? sortedHeros.slice(0,15).map((val, index)=>{
+          return (
+            <StyledTableRow key={index} className=''>
+              <StyledTableCell>{val.name}</StyledTableCell>
+              <StyledTableCell>{val.phone}</StyledTableCell>
+              <StyledTableCell>{val.email}</StyledTableCell>
+              <StyledTableCell>{val.date}</StyledTableCell>
+              <StyledTableCell>{val.country}</StyledTableCell>
+              <StyledTableCell>{val.company}</StyledTableCell>
+          </StyledTableRow>
+          );
+        })
+        :
+        heros.slice(0,15).map((val, index)=>{
+          return (
+            <StyledTableRow key={index} className=''>
+              <StyledTableCell>{val.name}</StyledTableCell>
+              <StyledTableCell>{val.phone}</StyledTableCell>
+              <StyledTableCell>{val.email}</StyledTableCell>
+              <StyledTableCell>{val.date}</StyledTableCell>
+              <StyledTableCell>{val.country}</StyledTableCell>
+              <StyledTableCell>{val.company}</StyledTableCell>
+          </StyledTableRow>
+          );
+        })};
         {heros.slice(0,10).map((val, index)=>{
           return (
             <StyledTableRow key={index} className=''>
