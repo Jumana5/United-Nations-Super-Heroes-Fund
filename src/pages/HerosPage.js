@@ -5,7 +5,7 @@ import FilterSection from '../components/FilterSection';
 import HerosTable from '../components/HerosTable';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getHeros, sortHeros } from '../redux/heros/herosActions';
 
 const useStyles = makeStyles((theme) => ({
@@ -21,8 +21,8 @@ export default function HerosPage() {
 
   useEffect(()=>{
     dispatch(getHeros());
-    dispatch(sortHeros());
-  }, [])
+  }, []);
+
   return (
     <div  className={classes.container} >
     <Grid container margin spacing={4}>
@@ -31,7 +31,7 @@ export default function HerosPage() {
         </Grid>
 
         <Grid item xs={8}>
-            <HerosTable data={heros}/>
+            <HerosTable herosData={heros}/>
         </Grid>
     </Grid>
 

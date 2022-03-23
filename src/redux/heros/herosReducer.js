@@ -3,39 +3,53 @@ import {
     HEROS_GET_REQUEST,
     HEROS_GET_SUCCESS,
     HEROS_GET_FAILURE,
-
-    HEROS_SORT_REQUEST,
-    HEROS_SORT_SUCCESS,
-    HEROS_SORT_FAILURE,
+    HEROS_SET_SORT,
 } from "./herosConstants";
 
-export const HERO_KEY = 'heroStore'
+
 
 let initialState = {
-    data:[],
+    heros:[],
     loading:false,
     errorMesage:''
 }
 
 export const herosReducer = (state = initialState, action) =>{
-    let {type, payload} = action
+    let {type, payload} = action;
     switch(type){
-        case HEROS_GET_REQUEST || HEROS_SORT_REQUEST:
+        case HEROS_GET_REQUEST:
             return{
                 ...state,
                 loading:true
             }
-            case HEROS_GET_SUCCESS || HEROS_SORT_SUCCESS:
-                return{
-                    ...state,
-                    loading:false,
-                    data:payload
-                }
-                case HEROS_GET_FAILURE || HEROS_SORT_FAILURE:
-                    return{
-                        ...state,
-                        errorMesage:payload
-                    }
-                    default: return state
+        case HEROS_GET_SUCCESS:
+            return{
+                ...state,
+                loading:false,
+                heros:payload
+            }
+        case HEROS_GET_FAILURE:
+            return{
+                ...state,
+                errorMesage:payload
+            }
+        default: 
+            return {
+              ...initialState
+            };
+    
     }
 }
+
+export const sortHerosReducer = (state = {isSorted: false}, action) =>{
+    let {type, payload} = action;
+    switch(type){
+        case HEROS_SET_SORT:
+            return {isSorted:payload,};
+      
+        default: 
+            return state;
+    
+    }
+}
+

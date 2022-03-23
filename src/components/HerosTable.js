@@ -1,6 +1,6 @@
 
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -10,7 +10,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import TableHeader from './TableHeader';
-
+import { useSelector } from 'react-redux';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -34,16 +34,36 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
+function compare_name( a, b )
+{
+if ( a.name.toLowerCase() < b.name.toLowerCase()){
+  return -1;
+}
+if ( a.name.toLowerCase() > b.name.toLowerCase()){
+  return 1;
+}
+return 0;
+}
 
-export default function HerosTable({data}) {
+export default function HerosTable({herosData}) {
   const colTitles = ["Name", "Phone", "Email", "Date", "Country", "Company"];
+  const [sortedHeros, setSortedHeros ] = useState([]);
+  const herosDetails = useSelector((state) => state.heros);
+  const { loading, error, heros } = herosDetails;
+  const  {isSorted}  = useSelector((state) => state.sortedHeros);
+  
+  useEffect(()=>{
+    console.log(isSorted);
+  }, [isSorted]);
+
+  useEffect(()=>{
+    console.log(heros);
+    console.log("something happened changed the heros value..");
+  }, [heros]);
 
   return (
     <TableContainer component={Paper}>
-
       <TableHeader />
-    
-      
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
@@ -53,7 +73,7 @@ export default function HerosTable({data}) {
           </TableRow>
         </TableHead>
         <TableBody>
-        {data.slice(0,10).map((val, index)=>{
+        {heros.slice(0,10).map((val, index)=>{
           return (
             <StyledTableRow key={index} className=''>
               <StyledTableCell>{val.name}</StyledTableCell>
@@ -64,7 +84,7 @@ export default function HerosTable({data}) {
               <StyledTableCell>{val.company}</StyledTableCell>
           </StyledTableRow>
           );
-        })}
+        })};
         </TableBody>
       </Table>
     </TableContainer>
