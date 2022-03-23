@@ -11,10 +11,6 @@ function App() {
   
   return (
     <Router>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/search">search</Link>
-      </nav>
       <Routes>
         <Route path="/" element={<HerosPage />}/>
         <Route path="/search" element={<SearchResult />}/>
