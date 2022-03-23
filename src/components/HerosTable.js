@@ -112,8 +112,8 @@ export default function HerosTable({herosData}) {
               <StyledTableCell>{val.country}</StyledTableCell>
               <StyledTableCell>{val.company}</StyledTableCell>
           </StyledTableRow>
-          );
-        })};
+          )
+        })}
         {heros.slice(0,10).map((val, index)=>{
           return (
             <StyledTableRow key={index} className=''>
@@ -124,8 +124,8 @@ export default function HerosTable({herosData}) {
               <StyledTableCell>{val.country}</StyledTableCell>
               <StyledTableCell>{val.company}</StyledTableCell>
           </StyledTableRow>
-          );
-        })};
+          )
+        })}
         </TableBody>
       </Table>
     </TableContainer>
