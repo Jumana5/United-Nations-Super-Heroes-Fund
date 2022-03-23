@@ -2,7 +2,7 @@
   "name": "unishf",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jumana5.github.io/United-Nations-Super-Heroes-Fund/",
+  "homepage": "https://jumana5.github.io/United-Nations-Super-Heroes-Fund",
   "dependencies": {
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
