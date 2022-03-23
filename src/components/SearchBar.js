@@ -2,6 +2,7 @@ import { useState} from 'react';
 import React from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import { useNavigate, useParams } from 'react-router-dom';
+import "../styles/SearchBar.css";
 
 export default function SearchBar({ placeholder, data }) {
     const [filteredData, setFilteredData] = useState([]);
@@ -34,13 +35,18 @@ export default function SearchBar({ placeholder, data }) {
         value={wordEntered}
         onChange={handleSearch}
       />
-      <SearchIcon />
+      <div className='searchIcon'>
+        <SearchIcon/>
+      </div>
     </div>
     {filteredData.length !== 0 && (
       <div className="dataResult">
         {filteredData.map((value, key) => {
           return (
-            <p>{value.name} </p>
+            //TODO idea: naviagate a click to a hero page? 
+            <a className="dataItem">
+              <p  >{value.name} </p>
+            </a>
           );
         })}
       </div>
