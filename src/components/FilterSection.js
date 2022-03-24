@@ -9,6 +9,7 @@ import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useNavigate } from 'react-router-dom';
+import BasicSelect from './SelectDropdown';
 
 
 export default function FilterSection() {
@@ -136,7 +137,7 @@ export default function FilterSection() {
             <CardContent>
             <Divider sx={{ height: 28, m: 0.5 , width: "100%"}} orientation="horizontal" />
                 <form action="/" method="POST" onSubmit={handleFilter} >
-                    
+                
                 <Grid container spacing={4}>
                     {
                         formElements.map((input, index) => 
@@ -146,6 +147,7 @@ export default function FilterSection() {
                         </Grid>)
                     }
                     </Grid>
+
                     <Grid container spacing={2}>
                     <Grid item xs={12} align="center">
                         <Button type="submit" variant="contained" color="primary"><FilterListIcon />Filter</Button>
