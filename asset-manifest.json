@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/United-Nations-Super-Heroes-Fund/static/css/main.76c30ff6.css",
-    "main.js": "/United-Nations-Super-Heroes-Fund/static/js/main.72796bec.js",
+    "main.js": "/United-Nations-Super-Heroes-Fund/static/js/main.6e2c327f.js",
     "static/js/787.11f8437a.chunk.js": "/United-Nations-Super-Heroes-Fund/static/js/787.11f8437a.chunk.js",
     "index.html": "/United-Nations-Super-Heroes-Fund/index.html",
     "main.76c30ff6.css.map": "/United-Nations-Super-Heroes-Fund/static/css/main.76c30ff6.css.map",
-    "main.72796bec.js.map": "/United-Nations-Super-Heroes-Fund/static/js/main.72796bec.js.map",
+    "main.6e2c327f.js.map": "/United-Nations-Super-Heroes-Fund/static/js/main.6e2c327f.js.map",
     "787.11f8437a.chunk.js.map": "/United-Nations-Super-Heroes-Fund/static/js/787.11f8437a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.76c30ff6.css",
-    "static/js/main.72796bec.js"
+    "static/js/main.6e2c327f.js"
   ]
 }
